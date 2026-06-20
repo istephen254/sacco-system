@@ -1,0 +1,428 @@
+:root {
+  --primary: #0b3d91;
+  --primary-dark: #072b63;
+  --secondary: #8dc63f;
+  --gold: #f4b400;
+  --light: #f8fafc;
+  --dark: #1e293b;
+  --white: #ffffff;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--light);
+  font-family: "Segoe UI", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--white);
+  padding: 15px 6%;
+
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 65px;
+  height: auto;
+}
+
+.logo h2 {
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+
+.logo span {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-menu a,
+.dropbtn {
+  color: var(--primary);
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.nav-menu a:hover,
+.dropbtn:hover {
+  color: var(--secondary);
+}
+
+/* ==========================
+   DROPDOWN
+========================== */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 220px;
+
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: var(--shadow);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 14px 18px;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background: #f5f7fa;
+  color: var(--primary);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ==========================
+   NAV BUTTONS
+========================== */
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.login-btn {
+  padding: 10px 20px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.join-btn {
+  padding: 10px 22px;
+  border: none;
+  background: var(--secondary);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.join-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+  height: 85vh;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.55),
+      rgba(0,0,0,.55)
+    ),
+    url("/hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+}
+
+.overlay {
+  max-width: 900px;
+  margin-left: 8%;
+  color: white;
+}
+
+.overlay h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.primary-btn {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ==========================
+   PAGE
+========================== */
+
+.homepage {
+  background: var(--light);
+  min-height: 100vh;
+}
+
+section {
+  padding: 80px 8%;
+}
+
+/* ==========================
+   WELCOME
+========================== */
+
+.welcome {
+  text-align: center;
+  background: white;
+}
+
+.welcome h2 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.welcome p {
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.stats-card,
+.service-card,
+.testimonial-card,
+.product-card,
+.membership-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  transition: .3s;
+}
+
+.stats-card:hover,
+.service-card:hover,
+.testimonial-card:hover,
+.product-card:hover,
+.membership-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ==========================
+   STATS
+========================== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  text-align: center;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.stat-card h3 {
+  color: var(--primary);
+  font-size: 2rem;
+}
+
+/* ==========================
+   PRODUCTS
+========================== */
+
+.products h2,
+.membership-section h2,
+.contact-section h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 40px;
+}
+
+.product-grid,
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 25px;
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact-card {
+  background: white;
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  line-height: 2;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+  background: var(--dark);
+  color: white;
+  margin-top: 80px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 40px;
+
+  padding: 60px 8%;
+}
+
+.footer h3,
+.footer h4 {
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer li {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding: 20px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 992px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .overlay {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+
+  section {
+    padding: 60px 20px;
+  }
+
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .nav-menu {
+    gap: 15px;
+  }
+}
