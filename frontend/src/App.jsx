@@ -1,8 +1,14 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Products from "./pages/Products";
+import Contact from "./pages/Contact";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+
 import Dashboard from "./pages/Dashboard";
 import Members from "./pages/Members";
 import Loans from "./pages/Loans";
@@ -16,15 +22,18 @@ import DashboardLayout from "./layouts/DashboardLayout";
 function App() {
   return (
     <Routes>
-
-      {/* PUBLIC LANDING PAGE */}
+      {/* PUBLIC PAGES */}
       <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/contact" element={<Contact />} />
 
-      {/* PUBLIC ROUTES */}
+      {/* AUTH PAGES */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* PROTECTED DASHBOARD LAYOUT */}
+      {/* DASHBOARD ROUTES */}
       <Route
         element={
           <ProtectedRoute
@@ -40,7 +49,6 @@ function App() {
           </ProtectedRoute>
         }
       >
-
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/members" element={<Members />} />
         <Route path="/loans" element={<Loans />} />
@@ -55,9 +63,10 @@ function App() {
             </ProtectedRoute>
           }
         />
-
       </Route>
 
+      {/* FALLBACK ROUTE */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

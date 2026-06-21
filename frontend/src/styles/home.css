@@ -1,428 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
+
 :root {
-  --primary: #0b3d91;
-  --primary-dark: #072b63;
-  --secondary: #8dc63f;
-  --gold: #f4b400;
-  --light: #f8fafc;
-  --dark: #1e293b;
-  --white: #ffffff;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --ink: #10241a;
+  --pine: #0f3d2e;
+  --pine-light: #1c5b43;
+  --gold: #c9941f;
+  --gold-light: #e8b94a;
+  --paper: #faf7f0;
+  --paper-dim: #f1ebdb;
+  --sage: #dde7dd;
+  --cream: #f6f2e8;
+
+  --display: 'Fraunces', serif;
+  --body: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
 }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: var(--light);
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--body);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
 }
 
-a {
-  text-decoration: none;
+a { text-decoration: none; color: inherit; }
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
-/* ==========================
-   NAVBAR
-========================== */
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
 
+section { padding: 5rem 6vw; }
+
+@media (max-width: 880px) {
+  section { padding: 3.5rem 6vw; }
+}
+
+/* ---------- NAVBAR ---------- */
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
-
+  z-index: 50;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  background: var(--white);
-  padding: 15px 6%;
-
-  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 6vw;
+  background: var(--pine);
+  border-bottom: 1px solid rgba(232, 185, 74, 0.25);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .logo img {
-  width: 65px;
-  height: auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
 }
 
 .logo h2 {
-  color: var(--primary);
-  margin-bottom: 2px;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--cream);
 }
 
 .logo span {
-  font-size: 0.8rem;
-  color: #666;
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-light);
 }
-
-/* ==========================
-   NAVIGATION
-========================== */
 
 .nav-menu {
   display: flex;
-  align-items: center;
-  gap: 28px;
+  gap: 2.2rem;
 }
 
-.nav-menu a,
-.dropbtn {
-  color: var(--primary);
-  font-weight: 600;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.nav-menu a:hover,
-.dropbtn:hover {
-  color: var(--secondary);
-}
-
-/* ==========================
-   DROPDOWN
-========================== */
-
-.dropdown {
+.nav-menu a {
   position: relative;
+  font-size: 0.92rem;
+  color: var(--cream);
+  opacity: 0.85;
+  padding-bottom: 4px;
+  transition: opacity 0.2s ease;
 }
 
-.dropdown-content {
-  display: none;
-
+.nav-menu a::after {
+  content: "";
   position: absolute;
-  top: 100%;
   left: 0;
-
-  min-width: 220px;
-
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-
-  box-shadow: var(--shadow);
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold-light);
+  transition: width 0.25s ease;
 }
 
-.dropdown-content a {
-  display: block;
-  padding: 14px 18px;
-  color: #333;
+.nav-menu a:hover {
+  opacity: 1;
 }
 
-.dropdown-content a:hover {
-  background: #f5f7fa;
-  color: var(--primary);
+.nav-menu a:hover::after {
+  width: 100%;
 }
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* ==========================
-   NAV BUTTONS
-========================== */
 
 .nav-buttons {
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .login-btn {
-  padding: 10px 20px;
-  border: 2px solid var(--primary);
-  background: transparent;
-  color: var(--primary);
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
+  padding: 0.55rem 1.3rem;
+  border: 1px solid rgba(246, 242, 232, 0.35);
+  border-radius: 999px;
+  color: var(--cream);
+  font-size: 0.88rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .login-btn:hover {
-  background: var(--primary);
-  color: white;
+  border-color: var(--gold-light);
+  color: var(--gold-light);
 }
 
 .join-btn {
-  padding: 10px 22px;
-  border: none;
-  background: var(--secondary);
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--ink);
   font-weight: 600;
+  font-size: 0.88rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .join-btn:hover {
-  transform: translateY(-2px);
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(201, 148, 31, 0.35);
 }
 
-/* ==========================
-   HERO
-========================== */
-
+/* ---------- HERO ---------- */
 .hero {
-  height: 85vh;
-
-  background:
-    linear-gradient(
-      rgba(0,0,0,.55),
-      rgba(0,0,0,.55)
-    ),
-    url("/hero.jpg");
-
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
-  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(170deg, var(--pine) 0%, var(--pine-light) 100%);
+  padding: 7rem 6vw 8rem;
 }
 
-.overlay {
-  max-width: 900px;
-  margin-left: 8%;
-  color: white;
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -120px;
+  width: 480px;
+  height: 480px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1.5px dashed rgba(232, 185, 74, 0.35);
+  animation: spin 60s linear infinite;
 }
 
-.overlay h1 {
-  font-size: 4rem;
-  line-height: 1.2;
-  margin-bottom: 20px;
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  width: 320px;
+  height: 320px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid rgba(232, 185, 74, 0.25);
 }
 
-.overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 1.3rem;
+}
+
+.hero-content p {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: rgba(246, 242, 232, 0.82);
+  max-width: 480px;
+  margin-bottom: 2.2rem;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 15px;
+  gap: 1rem;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .primary-btn {
-  background: var(--secondary);
-  color: white;
-  border: none;
-  padding: 14px 28px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.primary-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(201, 148, 31, 0.35);
 }
 
 .secondary-btn {
   background: transparent;
-  border: 2px solid white;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 8px;
-  cursor: pointer;
+  color: var(--cream);
+  border: 1px solid rgba(246, 242, 232, 0.4);
 }
 
-/* ==========================
-   PAGE
-========================== */
-
-.homepage {
-  background: var(--light);
-  min-height: 100vh;
+.secondary-btn:hover {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  transform: translateY(-2px);
 }
 
-section {
-  padding: 80px 8%;
+/* ---------- STATISTICS ---------- */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  background: var(--paper);
+  position: relative;
 }
 
-/* ==========================
-   WELCOME
-========================== */
-
-.welcome {
+.stats .card {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background: white;
+  background: var(--pine);
+  border: 1.5px dashed var(--gold);
+  box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px rgba(201, 148, 31, 0.3);
+  transition: transform 0.25s ease;
 }
 
-.welcome h2 {
-  color: var(--primary);
-  margin-bottom: 20px;
-}
-
-.welcome p {
-  max-width: 900px;
-  margin: auto;
-  line-height: 1.8;
-  color: #555;
-}
-
-/* ==========================
-   CARDS
-========================== */
-
-.stats-card,
-.service-card,
-.testimonial-card,
-.product-card,
-.membership-card {
-  background: white;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: var(--shadow);
-  transition: .3s;
-}
-
-.stats-card:hover,
-.service-card:hover,
-.testimonial-card:hover,
-.product-card:hover,
-.membership-card:hover {
+.stats .card:hover {
   transform: translateY(-6px);
 }
 
-/* ==========================
-   STATS
-========================== */
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 20px;
+.stats .card h2 {
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
 }
 
-.stat-card {
-  background: white;
+.stats .card p {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(246, 242, 232, 0.75);
+}
+
+/* ---------- SERVICES ---------- */
+.services {
+  background: var(--paper);
   text-align: center;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
 }
 
-.stat-card h3 {
-  color: var(--primary);
+.services h2 {
   font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--ink);
 }
 
-/* ==========================
-   PRODUCTS
-========================== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
 
-.products h2,
-.membership-section h2,
-.contact-section h2 {
+.service-card {
+  background: var(--cream);
+  border-top: 3px solid var(--gold);
+  border-radius: 6px;
+  padding: 1.8rem 1.6rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  background: var(--sage);
+  box-shadow: 0 14px 30px rgba(15, 61, 46, 0.12);
+}
+
+.service-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--pine);
+}
+
+.service-card p {
+  font-size: 0.92rem;
+  color: #45554c;
+  line-height: 1.5;
+}
+
+/* ---------- WHY US ---------- */
+.why-us {
+  background: var(--pine);
   text-align: center;
-  color: var(--primary);
-  margin-bottom: 40px;
 }
 
-.product-grid,
-.membership-grid {
+.why-us h2 {
+  color: var(--cream);
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.features {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* ==========================
-   CONTACT
-========================== */
-
-.contact-card {
-  background: white;
-  max-width: 700px;
-  margin: auto;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  line-height: 2;
+.features div {
+  padding: 1.2rem;
+  border-top: 1px dashed rgba(232, 185, 74, 0.4);
+  color: var(--cream);
+  font-size: 0.95rem;
 }
 
-/* ==========================
-   FOOTER
-========================== */
-
-.footer {
-  background: var(--dark);
-  color: white;
-  margin-top: 80px;
+/* ---------- TESTIMONIALS ---------- */
+.testimonials {
+  background: var(--paper);
+  text-align: center;
 }
 
-.footer-grid {
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 40px;
-
-  padding: 60px 8%;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
-.footer h3,
-.footer h4 {
+.testimonial {
+  position: relative;
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 2.4rem 1.6rem 1.6rem;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--ink);
+  box-shadow: 0 10px 24px rgba(15, 61, 46, 0.08);
+  text-align: left;
+}
+
+.testimonial::before {
+  content: "“";
+  position: absolute;
+  top: 0.4rem;
+  left: 1.2rem;
+  font-family: var(--display);
+  font-size: 2.6rem;
   color: var(--gold);
-  margin-bottom: 15px;
 }
 
-.footer ul {
-  list-style: none;
-}
-
-.footer li {
-  margin-bottom: 10px;
-}
-
-.footer-bottom {
+/* ---------- FOOTER ---------- */
+.footer {
+  background: var(--ink);
+  border-top: 2px solid var(--gold);
   text-align: center;
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding: 20px;
+  padding: 2.8rem 6vw;
 }
 
-/* ==========================
-   RESPONSIVE
-========================== */
-
-@media (max-width: 992px) {
-
-  .navbar {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .nav-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .overlay {
-    text-align: center;
-    margin: auto;
-    padding: 20px;
-  }
-
-  .overlay h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
+.footer h3 {
+  color: var(--cream);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
 }
 
-@media (max-width: 768px) {
+.footer p {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: rgba(246, 242, 232, 0.6);
+}
 
-  section {
-    padding: 60px 20px;
-  }
+/* ---------- ACCESSIBILITY & RESPONSIVE ---------- */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 2px;
+}
 
-  .overlay h1 {
-    font-size: 2rem;
-  }
+@media (prefers-reduced-motion: reduce) {
+  .hero::after { animation: none; }
+  * { transition: none !important; }
+}
 
-  .nav-menu {
-    gap: 15px;
-  }
+@media (max-width: 880px) {
+  .hero { padding-top: 5rem; padding-bottom: 5rem; }
+  .nav-menu { display: none; }
+}
+
+@media (max-width: 560px) {
+  .navbar { flex-wrap: wrap; gap: 1rem; }
+  .hero-buttons { flex-direction: column; }
+  .stats .card { width: 140px; height: 140px; }
 }

@@ -1,0 +1,249 @@
+products.css/* =========================
+   PRODUCTS PAGE
+========================= */
+
+.products-page {
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f8fc;
+  color: #222;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.products-hero {
+  height: 60vh;
+  background: linear-gradient(
+      rgba(0, 32, 96, 0.8),
+      rgba(0, 32, 96, 0.8)
+    ),
+    url("/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-overlay {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.products-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.products-overlay p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.products-intro {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.products-intro h2 {
+  color: #002060;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.products-intro p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* =========================
+   PRODUCTS GRID
+========================= */
+
+.products-grid-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.products-grid-section h2 {
+  text-align: center;
+  color: #002060;
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+
+.products-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.4s ease;
+  border-top: 5px solid #002060;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 32, 96, 0.15);
+}
+
+.product-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.product-card h3 {
+  color: #002060;
+  margin-bottom: 15px;
+}
+
+.product-card p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.product-btn {
+  background: #002060;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.product-btn:hover {
+  background: #0044cc;
+}
+
+/* =========================
+   BENEFITS SECTION
+========================= */
+
+.benefits-section {
+  padding: 80px 20px;
+  background: #eef4ff;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  color: #002060;
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+
+.benefits-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.benefit-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+}
+
+.benefit-card h3 {
+  color: #002060;
+  margin-bottom: 15px;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.products-cta {
+  background: #002060;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.products-cta h2 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+.products-cta p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background: #ffd700;
+  color: #002060;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  background: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .products-overlay h1 {
+    font-size: 2.2rem;
+  }
+
+  .products-overlay p {
+    font-size: 1rem;
+  }
+
+  .products-intro,
+  .products-grid-section,
+  .benefits-section,
+  .products-cta {
+    padding: 60px 15px;
+  }
+
+  .products-cta h2 {
+    font-size: 1.8rem;
+  }
+}
