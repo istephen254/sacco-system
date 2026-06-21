@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import api from "../services/api";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -22,29 +23,14 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await api.post("/auth/login", formData);
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        alert(data.message || "Invalid credentials");
-        return;
-      }
-
-      // SAVE USER + TOKEN
-      login(data.user, data.token);
+      login(res.data.user, res.data.token);
 
       navigate("/dashboard");
-
     } catch (error) {
       console.error(error);
-      alert("Server error");
+      alert(error.response?.data?.message || "Server error");
     }
   };
 

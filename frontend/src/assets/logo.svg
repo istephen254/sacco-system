@@ -1,0 +1,86 @@
+<svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Colors -->
+  <defs>
+    <style>
+      .blue { fill:#0B2E83; }
+      .green { fill:#58A81F; }
+      .title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 800;
+        font-size: 52px;
+        fill:#0B2E83;
+      }
+      .tagline {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        fill:#58A81F;
+      }
+    </style>
+  </defs>
+
+  <!-- Top Arc -->
+  <path d="M130 140
+       A120 120 0 0 1 370 140" fill="none" stroke="#0B2E83" stroke-width="12" stroke-linecap="round"></path>
+
+  <!-- Left Hand -->
+  <path class="blue" d="M110 145
+       C80 190 80 245 130 270
+       C165 285 210 292 235 285
+       C195 250 170 220 145 185
+       C132 167 122 154 110 145Z"></path>
+
+  <!-- Right Hand -->
+  <path class="blue" d="M390 145
+       C420 190 420 245 370 270
+       C335 285 290 292 265 285
+       C305 250 330 220 355 185
+       C368 167 378 154 390 145Z"></path>
+
+  <!-- Center Person Head -->
+  <circle cx="250" cy="95" r="18" class="blue"></circle>
+
+  <!-- Center Person Body -->
+  <path class="blue" d="M215 120
+       C225 145 230 200 250 250
+       C270 200 275 145 285 120
+       C270 125 255 132 250 138
+       C245 132 230 125 215 120Z"></path>
+
+  <!-- Left Person -->
+  <circle cx="180" cy="125" r="15" class="green"></circle>
+
+  <path class="green" d="M160 145
+       C155 190 175 220 220 245
+       C205 205 198 175 195 145
+       C186 155 172 155 160 145Z"></path>
+
+  <!-- Right Person -->
+  <circle cx="320" cy="125" r="15" class="green"></circle>
+
+  <path class="green" d="M340 145
+       C345 190 325 220 280 245
+       C295 205 302 175 305 145
+       C314 155 328 155 340 145Z"></path>
+
+  <!-- White Leaf Details -->
+  <path d="M175 160 C190 180 200 195 212 225" stroke="white" stroke-width="4" fill="none"></path>
+
+  <path d="M325 160 C310 180 300 195 288 225" stroke="white" stroke-width="4" fill="none"></path>
+
+  <!-- Company Name -->
+  <text x="250" y="340" text-anchor="middle" class="title">
+    UNITY SACCO
+  </text>
+
+  <!-- Tagline -->
+  <line x1="60" y1="362" x2="110" y2="362" stroke="#58A81F" stroke-width="3"></line>
+
+  <text x="250" y="370" text-anchor="middle" class="tagline">
+    Your SACCO For All Seasons
+  </text>
+
+  <line x1="390" y1="362" x2="440" y2="362" stroke="#58A81F" stroke-width="3"></line>
+
+</svg>
