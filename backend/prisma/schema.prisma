@@ -18,17 +18,17 @@ model User {
 }
 
 model Member {
-  id           Int      @id @default(autoincrement())
-  userId       Int      @unique
-  user         User     @relation(fields: [userId], references: [id])
-  firstName    String
-  lastName     String
-  phone        String?
-  nationalId   String?  @unique
-  branch       String?
-  status       String   @default("active")
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id          Int      @id @default(autoincrement())
+  userId      Int      @unique
+  user        User     @relation(fields: [userId], references: [id])
+  firstName   String
+  lastName    String
+  phone       String?
+  nationalId  String?  @unique
+  branch      String?
+  status      String   @default("active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 enum Role {
